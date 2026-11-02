@@ -919,6 +919,17 @@
     }
     .form-error[hidden] { display: none; }
     .form-error a { color: var(--gold-lt); text-decoration: underline; }
+    .form-consent {
+      display: flex; align-items: flex-start; gap: 10px;
+      margin: 4px 0 16px;
+      font-size: 0.82rem; font-weight: 300; line-height: 1.55;
+      color: rgba(255,255,255,0.78);
+    }
+    .form-consent input {
+      width: 16px; height: 16px; margin-top: 3px; flex-shrink: 0;
+      accent-color: var(--gold);
+    }
+    .form-consent a { color: var(--gold-lt); text-decoration: underline; }
     .cta-note {
       font-size: 0.78rem; color: rgba(255,255,255,0.4);
       line-height: 1.6; text-align: center;
@@ -1147,11 +1158,23 @@
   }
   .c-error[hidden] { display: none; }
   .c-error a { color: var(--sage-dk); }
-  .c-note {
-    font-size: 0.75rem; font-weight: 300; color: var(--soft);
-    text-align: center; margin-top: 18px; line-height: 1.65;
-    font-style: italic;
-  }
+    .c-note {
+      font-size: 0.75rem; font-weight: 300; color: var(--soft);
+      text-align: center; margin-top: 18px; line-height: 1.65;
+      font-style: italic;
+    }
+    .c-consent {
+      display: flex; align-items: flex-start; gap: 10px;
+      margin: 8px 0 16px;
+      font-family: var(--body);
+      font-size: 0.85rem; font-weight: 300; line-height: 1.55;
+      color: var(--mid);
+    }
+    .c-consent input {
+      width: 16px; height: 16px; margin-top: 3px; flex-shrink: 0;
+      accent-color: var(--sage-dk);
+    }
+    .c-consent a { color: var(--sage-dk); text-decoration: underline; }
   .c-success {
     display: none; text-align: center; padding: 16px 0 8px;
   }
@@ -1947,6 +1970,7 @@
   <form class="cta-form" name="contact" method="POST" action="https://formspree.io/f/mnjwaeqb" id="contactForm">
     <input type="hidden" name="_next" value="https://www.lifeaftersurvivor.com/success.html" />
     <input type="hidden" name="_subject" value="New Contact — Life After Survivor" />
+    <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
     <span class="cta-form-label">Or send us a message</span>
     <div class="form-row">
       <div class="form-field">
@@ -1970,9 +1994,13 @@
       <label>What would you most like help with?</label>
       <textarea name="message" rows="3" placeholder="Tell us what's been hardest and what you most want to rebuild..."></textarea>
     </div>
+    <label class="form-consent">
+      <input type="checkbox" name="consent" value="Agreed" required>
+      <span>I agree that Life|After may use the information I share to respond to me, as described in the <a href="/privacy/" target="_blank">Privacy Policy</a>. This is not medical advice.</span>
+    </label>
     <button type="submit" class="form-submit">Send Message →</button>
     <div class="form-error" id="formError" role="alert" hidden>
-      <p>We couldn't send your message. Please try again, or call <a href="tel:9852069231">985-206-9231</a> or email <a href="mailto:info@lifeafter.net">info@lifeafter.net</a>.</p>
+      <p>We couldn't send your message. Please try again, or call <a href="tel:9852069231">985-206-9231</a> or email <a href="mailto:rick@lifeafter.net">rick@lifeafter.net</a>.</p>
     </div>
     <div class="form-success" id="formSuccess" role="status" aria-live="polite">
       <p>✓ &nbsp;Message sent — thank you.<br><span style="opacity:0.6;">A care coordinator will be in touch within one business day.</span></p>
@@ -2255,6 +2283,7 @@
       <form id="cForm" name="concierge-application" method="POST" action="https://formspree.io/f/xqenzrkn">
         <input type="hidden" name="_next" value="https://www.lifeaftersurvivor.com/success.html" />
             <input type="hidden" name="_subject" value="Concierge Application — Life After Survivor" />
+        <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
 
         <div class="c-divider">Your Information</div>
         <div class="c-row">
@@ -2321,9 +2350,13 @@
           </select>
         </div>
 
+        <label class="c-consent">
+          <input type="checkbox" name="consent" value="Agreed" required>
+          <span>I agree that Life|After may use the information I share to respond to me, as described in the <a href="/privacy/" target="_blank">Privacy Policy</a>. This is not medical advice.</span>
+        </label>
         <button type="submit" class="c-submit">Submit Application →</button>
         <div class="c-error" id="cError" role="alert" hidden>
-          <p>We couldn't send your application. Please try again, or call <a href="tel:9852069231">985-206-9231</a> or email <a href="mailto:info@lifeafter.net">info@lifeafter.net</a>.</p>
+          <p>We couldn't send your application. Please try again, or call <a href="tel:9852069231">985-206-9231</a> or email <a href="mailto:rick@lifeafter.net">rick@lifeafter.net</a>.</p>
         </div>
         <p class="c-note">Concierge is limited to 10 clients at any time. We review every application personally and will be in touch within one business day.</p>
       </form>
