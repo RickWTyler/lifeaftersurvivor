@@ -195,6 +195,7 @@
     .hero-stats {
       display: flex; gap: 48px; margin-top: 56px;
       padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.12);
+      align-items: flex-start; flex-wrap: wrap;
     }
     .stat-item { }
     .stat-num {
@@ -204,6 +205,16 @@
     .stat-label {
       font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
       text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 4px;
+    }
+    .stat-item-rtw { max-width: 240px; }
+    .stat-item-rtw .stat-label {
+      text-transform: none; letter-spacing: 0.01em;
+      font-size: 0.8rem; font-weight: 600; line-height: 1.35;
+      color: rgba(255,255,255,0.78);
+    }
+    .stat-support {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--gold-lt); margin-top: 8px;
     }
     .hero-right {
       position: relative; z-index: 2;
@@ -314,8 +325,10 @@
     }
     .gap-grid {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 100px; align-items: start;
+      gap: 100px; align-items: center;
     }
+    .gap-aside { display: flex; }
+    .gap-aside .gap-stat-card { width: 100%; margin: 0; }
     .gap-pull-quote {
       font-family: var(--display);
       font-size: clamp(1.4rem, 2vw, 1.9rem);
@@ -1294,31 +1307,14 @@
         <div class="stat-num">20+</div>
         <div class="stat-label">Years Experience</div>
       </div>
-      <div class="stat-item">
+      <div class="stat-item stat-item-rtw">
         <div class="stat-num">500+</div>
-        <div class="stat-label">Clients Served</div>
+        <div class="stat-label">Employees supported<br>through return to work</div>
+        <div class="stat-support">23 years at Chevron</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">100%</div>
         <div class="stat-label">Remote Delivery</div>
-      </div>
-    </div>
-  </div>
-  <div class="hero-right reveal reveal-delay-1">
-    <div class="hero-card">
-      <span class="hero-quote-mark">"</span>
-      <!-- EDIT: TESTIMONIALS — hero card quote -->
-      <blockquote>I finally felt like someone understood what life after cancer actually looks like — not just the treatment, but everything after.</blockquote>
-      <div class="hero-card-attr">
-        <div class="attr-avatar">S</div>
-        <div>
-          <div class="attr-name">Sandra M.</div>
-          <div class="attr-detail">Breast cancer survivor · Foundation Plan</div>
-        </div>
-      </div>
-      <div class="hero-badge">
-        <div class="hero-badge-num">98%</div>
-        <div class="hero-badge-label">Client Satisfaction</div>
       </div>
     </div>
   </div>
@@ -1347,16 +1343,8 @@
         <p style="font-size:0.95rem;font-weight:300;color:var(--mid);line-height:1.85;margin-bottom:20px;">That transition happens at exactly the moment when things still aren't right. Fatigue persists. Brain fog is real. Sleep is disrupted. Strength hasn't returned. Side effects from treatment are still showing up — sometimes ones that weren't there before. And yet everyone around you expects you to be who you were before.</p>
         <p style="font-size:0.95rem;font-weight:300;color:var(--mid);line-height:1.85;">Managing these effects, rebuilding physical and mental health, understanding what's normal and what needs attention — this is real, practical work. It requires guidance, structure, and someone in your corner who understands survivorship specifically. That's what Life After Survivor provides.</p>
       </div>
-      <div class="reveal reveal-delay-1">
-        <div class="gap-testimonial">
-          <blockquote>"Nobody told me the fatigue and brain fog would still be this bad six months later. I didn't know what was normal, what needed attention, and what I could actually do about it."</blockquote>
-          <div class="gap-testimonial-attr">James T. — Colon cancer survivor · Foundation Plan</div>
-        </div>
-        <div class="gap-testimonial">
-          <blockquote>"Having a team who could help me make sense of it and rebuild — that changed everything. I wasn't navigating it alone anymore."</blockquote>
-          <div class="gap-testimonial-attr">Linda K. — Ovarian cancer survivor · Thrive Plan</div>
-        </div>
-        <div class="gap-stat-card reveal reveal-delay-2">
+      <div class="reveal reveal-delay-1 gap-aside">
+        <div class="gap-stat-card">
           <div class="gap-stat-num">1 in 3</div>
           <p class="gap-stat-text">cancer survivors report feeling abandoned by the healthcare system once active treatment ends.</p>
         </div>
@@ -1689,35 +1677,7 @@
   </div>
 </section>
 
-<!-- ============================================================ -->
-<!-- EDIT: TESTIMONIALS — quotes, names, plan details -->
-<!-- ============================================================ -->
-<!-- TESTIMONIALS -->
-<section class="testi-section">
-  <div class="section-wrap">
-    <div class="reveal">
-      <span class="section-label">Survivor Stories</span>
-      <h2 class="section-title">What recovery<br><em>actually looks like.</em></h2>
-    </div>
-    <div class="testi-grid reveal reveal-delay-1">
-      <div class="testi-card">
-        <blockquote>Nobody told me the fatigue and brain fog would still be this bad months later. Having a team who helped me understand what was normal and actually rebuild — that changed everything.</blockquote>
-        <div class="testi-attr-name">James T.</div>
-        <div class="testi-attr-detail">Colon cancer survivor · Foundation Plan</div>
-      </div>
-      <div class="testi-card">
-        <blockquote>I thought I'd feel better the day treatment ended. I didn't. Life After Survivor gave me a real plan for rebuilding my strength and managing what was still going on in my body.</blockquote>
-        <div class="testi-attr-name">Linda K.</div>
-        <div class="testi-attr-detail">Ovarian cancer survivor · Thrive Plan</div>
-      </div>
-      <div class="testi-card">
-        <blockquote>The practical guidance on sleep, nutrition, and getting my energy back was what I needed. Not just someone to talk to — someone who could actually help me rebuild.</blockquote>
-        <div class="testi-attr-name">Michael R.</div>
-        <div class="testi-attr-detail">Lymphoma survivor · Premium Care Plan</div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Testimonials section: add real survivor testimonials here when received -->
 
 <!-- ============================================================ -->
 <!-- EDIT: ABOUT SECTION — bio, credentials, story -->
@@ -1740,8 +1700,9 @@
           <span class="cred-badge">MS Kinesiology — SELU</span>
           <span class="cred-badge">20+ Yrs Ergonomics &amp; RTW</span>
           <span class="cred-badge">Tyler Ergonomics &amp; Safety</span>
-          <span class="cred-badge">RWT Consulting</span>
-          <span class="cred-badge">500+ Clients Served</span>
+          <span class="cred-badge">Tyler Ergonomics</span>
+          <span class="cred-badge">500+ employees supported through return to work</span>
+          <span class="cred-badge">23 years at Chevron</span>
         </div>
       </div>
     </div>
